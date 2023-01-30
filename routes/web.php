@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use Laravel\Socialite\Facades\Socialite;
 
 /*
@@ -19,6 +20,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/auth/redirect', [AuthController::class, 'redirect']);
+Route::redirect('home', 'dashboard');
 
-Route::get('/auth/callback', [AuthController::class, 'callback']);
+Route::get('auth', [AuthController::class, 'index'])->name('login')->middleware('guest');
+
+Route::get('/auth/redirect', [AuthController::class, 'redirect'])->middleware('guest');
+
+Route::get('/auth/callback', [AuthController::class, 'callback'])->middleware('guest');
+Route::get('/auth/logout', [AuthController::class, 'logout']);
+
+Route::get('dashboard', function(){
+    return 'Selamat Datang '. Auth::user()->name.' di website Portoofolioo';
+})->middleware('auth');
