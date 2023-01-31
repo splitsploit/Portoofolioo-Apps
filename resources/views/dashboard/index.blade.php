@@ -36,7 +36,7 @@
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
                 <img src="{{ asset('admin') }}/images/faces/face5.jpg" alt="profile"/>
-                <span class="nav-profile-name">Louis Barnett</span>
+                <span class="nav-profile-name">Byyy.</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                 <a class="dropdown-item">
@@ -88,8 +88,8 @@
             <!-- partial:partials/_footer.html -->
             <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard  </a> templates</span>
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.byby.my.id/" target="_blank">SplitSploit</a> 2023</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hit Me At <a href="https://wa.me/6282265157644" target="_blank"> Here  </a></span>
             </div>
             </footer>
             <!-- partial -->
