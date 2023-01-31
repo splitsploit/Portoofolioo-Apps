@@ -30,5 +30,5 @@ Route::get('/auth/callback', [AuthController::class, 'callback'])->middleware('g
 Route::get('/auth/logout', [AuthController::class, 'logout']);
 
 Route::get('dashboard', function(){
-    return 'Selamat Datang '. Auth::user()->name.' di website Portoofolioo';
+    return view('dashboard.index');
 })->middleware('auth');
