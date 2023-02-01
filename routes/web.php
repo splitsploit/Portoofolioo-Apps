@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\halamanController;
 use Laravel\Socialite\Facades\Socialite;
 
 /*
@@ -29,6 +30,15 @@ Route::get('/auth/redirect', [AuthController::class, 'redirect'])->middleware('g
 Route::get('/auth/callback', [AuthController::class, 'callback'])->middleware('guest');
 Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('dashboard', function(){
-    return view('dashboard.index');
-})->middleware('auth');
+// Route::get('dashboard', function(){
+//     return view('dashboard.index');
+// })->middleware('auth');
+
+Route::prefix('dashboard')->middleware('auth')->group(
+    function(){
+        Route::get('/', function(){
+            return view('dashboard.index');
+        });
+        Route::resource('halaman', halamanController::class);
+    }
+);
