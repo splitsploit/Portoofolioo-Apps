@@ -18,7 +18,7 @@
         </div>
         <div class="mb-3 pt-3">
           <label for="isi" class="form-label">Isi</label>
-          <textarea class="form-control" name="isi" rows="5">{{ Session::get('isi') }}</textarea>
+          <textarea class="form-control summernote" name="isi" rows="5">{{ Session::get('isi') }}</textarea>
         </div>
         <button class="btn btn-primary text-white" type="submit" name="simpan">Simpan</button>
     </form>
