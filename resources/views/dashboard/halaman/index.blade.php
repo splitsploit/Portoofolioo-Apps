@@ -15,11 +15,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <?php $i = 1; ?>
+                @foreach ($data as $item)
+                    <tr>
+                        <td>{{ $i }}</td>
+                        <td>{{ $item->judul }}</td>
+                        <td>
+                            <a href="" class="btn btn-warning">Edit</a>
+                            <a href="" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                <?php $i++; ?>
+                @endforeach
             </tbody>
         </table>
     </div>

@@ -15,7 +15,9 @@ class halamanController extends Controller
      */
     public function index()
     {
-        return view('dashboard.halaman.index');
+        $data = Halaman::orderBy('judul', 'desc')->get();
+
+        return view('dashboard.halaman.index', compact('data'));
     }
 
     /**
