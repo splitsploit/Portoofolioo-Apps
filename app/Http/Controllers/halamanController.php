@@ -123,6 +123,8 @@ class halamanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Halaman::where('id', $id)->delete();
+
+        return redirect()->route('halaman.index')->with('success', 'Berhasil Hapus Data');
     }
 }
