@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Halaman;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class halamanController extends Controller
 {
@@ -23,7 +25,7 @@ class halamanController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.halaman.create');
     }
 
     /**
@@ -34,7 +36,28 @@ class halamanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Session::flash('judul', $request->judul);
+        Session::flash('isi', $request->isi);
+
+        $request->validate([
+
+            'judul' => 'required',
+            'isi' => 'required'
+        ],
+        [
+            'judul.required' => 'Judul Wajib Diisi',
+            'isi.required' => 'Isian Wajib Diisi'
+        ]
+    );
+        $data = [
+            'judul' => $request->judul,
+            'isi' => $request->isi,
+        ];
+
+        Halaman::create($data);
+
+        return redirect()->route('halaman.index')->with('success', 'Berhasil Menambahkan Data');
+
     }
 
     /**
