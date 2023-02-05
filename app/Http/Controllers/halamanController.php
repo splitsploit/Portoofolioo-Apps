@@ -6,7 +6,7 @@ use App\Models\Halaman;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class halamanController extends Controller
+class HalamanController extends Controller
 {
     /**
      * Display a listing of the resource.

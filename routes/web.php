@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\halamanController;
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\HalamanController;
 use Laravel\Socialite\Facades\Socialite;
 
 /*
@@ -39,6 +40,7 @@ Route::prefix('dashboard')->middleware('auth')->group(
         Route::get('/', function(){
             return view('dashboard.layout');
         });
-        Route::resource('halaman', halamanController::class);
+        Route::resource('halaman', HalamanController::class);
+        Route::resource('experience', ExperienceController::class);
     }
 );
