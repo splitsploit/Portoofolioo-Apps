@@ -29,11 +29,11 @@
           <div class="row">
             <div class="col-auto">Tanggal Mulai</div>
             <div class="col-auto">
-              <input type="date" class="form-control form-control-sm" name="tgl_mulai" placeholder="dd/mm/yyyy">
+              <input type="date" class="form-control form-control-sm" name="tgl_mulai" placeholder="dd/mm/yyyy" value="{{ Session::get('tgl_mulai') }}">
             </div>
             <div class="col-auto">Tanggal Akhir</div>
             <div class="col-auto">
-              <input type="date" class="form-control form-control-sm" name="tgl_akhir" placeholder="dd/mm/yyyy">
+              <input type="date" class="form-control form-control-sm" name="tgl_akhir" placeholder="dd/mm/yyyy" value="{{ Session::get('tgl_akhir') }}">
             </div>
           </div>
         </div>
