@@ -33,7 +33,12 @@ class Riwayat extends Model
     }
 
     public function getTglAkhirIndoAttribute()
-    {   
-        return Carbon::parse($this->attributes['tgl_akhir'])->translatedFormat('d F Y');
-    }
+    {
+        if($this->attributes['tgl_akhir'])
+        {
+            return Carbon::parse($this->attributes['tgl_akhir'])->translatedFormat('d F Y');
+        } else {
+            return 'Present';
+        }
+    } 
 }

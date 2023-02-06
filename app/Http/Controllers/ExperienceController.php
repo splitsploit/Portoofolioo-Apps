@@ -91,7 +91,9 @@ class ExperienceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Riwayat::where('id', $id)->where('tipe', 'experience')->first();
+
+        return view('dashboard.experience.edit', compact('data'));
     }
 
     /**
@@ -103,7 +105,33 @@ class ExperienceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+
+            'judul' => 'required',
+            'info1' => 'required',
+            'tgl_mulai' => 'required',
+            'tgl_akhir' => 'nullable',
+            'isi' => 'required'
+        ],
+        [
+            'judul.required' => 'Judul Wajib Diisi',
+            'info1.required' => 'Perusahaan Wajib Diisi',
+            'tgl_mulai.required' => 'Tanggal Mulai Wajib Diisi',
+            'isi.required' => 'Isian Wajib Diisi'
+        ]
+    );
+        $data = [
+            'judul' => $request->judul,
+            'info1' => $request->info1,
+            'tipe' => 'experience',
+            'tgl_mulai' => $request->tgl_mulai,
+            'tgl_akhir' => $request->tgl_akhir,
+            'isi' => $request->isi,
+        ];
+        
+        Riwayat::where('id', $id)->update($data);
+
+        return redirect()->route('experience.index')->with('success', 'Berhasil Update Data Experience');
     }
 
     /**
