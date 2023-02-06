@@ -111,22 +111,23 @@ class EducationController extends Controller
             'info1' => 'required',
             'tgl_mulai' => 'required',
             'tgl_akhir' => 'nullable',
-            'isi' => 'required'
         ],
         [
             'judul.required' => 'Judul Wajib Diisi',
-            'info1.required' => 'Perusahaan Wajib Diisi',
+            'info1.required' => 'Universitas Wajib Diisi',
+            'info2.required' => 'Fakultas Wajib Diisi',
+            'info3.required' => 'Prodi Wajib Diisi',
             'tgl_mulai.required' => 'Tanggal Mulai Wajib Diisi',
-            'isi.required' => 'Isian Wajib Diisi'
         ]
     );
         $data = [
             'judul' => $request->judul,
             'info1' => $request->info1,
-            'tipe' => 'experience',
+            'info2' => $request->info2,
+            'info3' => $request->info3,
+            'tipe' => 'education',
             'tgl_mulai' => $request->tgl_mulai,
             'tgl_akhir' => $request->tgl_akhir,
-            'isi' => $request->isi,
         ];
         
         Riwayat::where('id', $id)->update($data);

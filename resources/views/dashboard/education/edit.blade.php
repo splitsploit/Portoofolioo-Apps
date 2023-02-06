@@ -3,28 +3,47 @@
 @section('content')
     @include('dashboard.pesan')
     <div class="pb-3">
-        <a href="{{ route('experience.index') }}" class="btn btn-dark text-white">Kembali</a>
+        <a href="{{ route('education.index') }}" class="btn btn-dark text-white">Kembali</a>
     </div>
-    <form action="{{ route('experience.update', $data->id ) }}" method="POST">
+    <form action="{{ route('education.update', $data->id) }}" method="POST">
       @csrf
       @method('PUT')
+
         <div class="mb-3 pt-3">
-          <label for="judul" class="form-label">Posisi</label>
+          <label for="judul" class="form-label">Nama Universitas</label>
           <input type="text"
             class="form-control form-control-sm" 
             name="judul" 
             id="judul" 
             aria-describedby="helpId" 
-            placeholder="Posisi" value="{{ $data->judul }}">
+            placeholder="Universitas" value="{{ $data->judul }}">
         </div>
         <div class="mb-3 pt-3">
-          <label for="info1" class="form-label">Nama Perusahaan</label>
+          <label for="info1" class="form-label">Nama Fakultas</label>
           <input type="text"
             class="form-control form-control-sm" 
             name="info1" 
             id="info1" 
             aria-describedby="helpId" 
-            placeholder="Perusahaan" value="{{ $data->info1 }}">
+            placeholder="Fakultas" value="{{ $data->info1 }}">
+        </div>
+        <div class="mb-3 pt-3">
+          <label for="info2" class="form-label">Nama Prodi</label>
+          <input type="text"
+            class="form-control form-control-sm" 
+            name="info2" 
+            id="info2" 
+            aria-describedby="helpId" 
+            placeholder="Prodi" value="{{ $data->info2 }}">
+        </div>
+        <div class="mb-3 pt-3">
+          <label for="info3" class="form-label">IPK</label>
+          <input type="text"
+            class="form-control form-control-sm" 
+            name="info3" 
+            id="info3" 
+            aria-describedby="helpId" 
+            placeholder="IPK" value="{{ $data->info3 }}">
         </div>
         <div class="mb-3 pt-3">
           <div class="row">
@@ -37,10 +56,6 @@
               <input type="date" class="form-control form-control-sm" name="tgl_akhir" placeholder="dd/mm/yyyy" value="{{ $data->tgl_akhir }}">
             </div>
           </div>
-        </div>
-        <div class="mb-3 pt-3">
-          <label for="isi" class="form-label">Isi</label>
-          <textarea class="form-control summernote" name="isi" rows="5">{{ $data->isi }}</textarea>
         </div>
         <button class="btn btn-primary text-white" type="submit" name="simpan">Simpan</button>
     </form>
