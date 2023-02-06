@@ -40,7 +40,7 @@ Route::prefix('dashboard')->middleware('auth')->group(
     function(){
         Route::get('/', function(){
             return view('dashboard.layout');
-        });
+        })->name('dashboard.index');
         Route::resource('halaman', HalamanController::class);
         Route::resource('experience', ExperienceController::class);
         Route::resource('education', EducationController::class);

@@ -27,7 +27,7 @@
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex justify-content-center">
             <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-            <a class="navbar-brand brand-logo" href="{{ route('halaman.index') }}">Portoofolioo</a>
+            <a class="navbar-brand brand-logo" href="{{ route('dashboard.index') }}">Portoofolioo</a>
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                 <span class="mdi mdi-sort-variant"></span>
             </button>
@@ -58,6 +58,12 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('dashboard.index') }}">
+                <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+                </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('halaman.index') }}">
                 <i class="mdi mdi-file-document-box-outline menu-icon"></i>
