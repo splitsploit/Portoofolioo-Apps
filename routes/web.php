@@ -7,6 +7,7 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\SkillController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,5 +45,7 @@ Route::prefix('dashboard')->middleware('auth')->group(
         Route::resource('halaman', HalamanController::class);
         Route::resource('experience', ExperienceController::class);
         Route::resource('education', EducationController::class);
+        Route::get('skill', [SkillController::class, 'index'])->name('skill.index');
+        Route::post('skill', [SkillController::class, 'update'])->name('skill.update');
     }
 );

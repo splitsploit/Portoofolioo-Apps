@@ -82,6 +82,12 @@
                 <span class="menu-title">Education</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('skill.index') }}">
+                <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+                <span class="menu-title">Skill</span>
+                </a>
+            </li>
             </ul>
         </nav>
         <!-- partial -->
