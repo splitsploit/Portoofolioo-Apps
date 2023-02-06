@@ -142,6 +142,8 @@ class ExperienceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Riwayat::where('id', $id)->where('tipe', 'experience')->delete();
+
+        return redirect()->route('experience.index')->with('success', 'Berhasil Hapus Data Experience');
     }
 }
