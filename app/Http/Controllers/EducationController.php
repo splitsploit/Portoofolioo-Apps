@@ -143,6 +143,8 @@ class EducationController extends Controller
      */
     public function destroy($id)
     {
+        // delete data education
+        
         Riwayat::where('id', $id)->where('tipe', 'education')->delete();
 
         return redirect()->route('education.index')->with('success', 'Berhasil Hapus Data Education');
