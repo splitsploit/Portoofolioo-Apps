@@ -1,15 +1,13 @@
 @extends('dashboard.layout')
 
 @section('content')
-
-{{ $skill }}
     {{-- @include('dashboard.pesan') --}}
     <form action="{{ route('skill.update') }}" method="POST">
       @csrf
         <div class="mb-3 pt-3">
           <label for="judul" class="form-label">Programming Language & Tools</label>
           <input type="text"
-            class="form-control form-control-sm" 
+            class="form-control form-control-sm skill" 
             name="_language" 
             id="judul" 
             aria-describedby="helpId" 
