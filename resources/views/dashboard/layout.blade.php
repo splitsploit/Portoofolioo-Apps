@@ -179,17 +179,9 @@
             });
         });
     </script>
-    <script>
-        $(document).ready(function() {
-            $('.skill').tokenfield({
-                autocomplete: {
-                    source: [{!! $skill !!}],
-                    delay: 100
-                },
-                showAutocompleteOnFocus: true
-            });
-        });
-    </script>
+
+    @stack('child-script')
+    
 </body>
 
 </html>
