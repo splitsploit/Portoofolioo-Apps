@@ -11,11 +11,11 @@
             name="_language" 
             id="judul" 
             aria-describedby="helpId" 
-            placeholder="Programming Language & Tools" value="">
+            placeholder="Programming Language & Tools" value="{{ get_meta_value('_language') }}">
         </div>
         <div class="mb-3 pt-3">
           <label for="isi" class="form-label">Workflow</label>
-          <textarea class="form-control summernote" name="_workflow" rows="5"></textarea>
+          <textarea class="form-control summernote" name="_workflow" rows="5">{{ get_meta_value('_workflow') }}</textarea>
         </div>
         <button class="btn btn-primary text-white" type="submit" name="simpan">Simpan</button>
     </form>
