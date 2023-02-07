@@ -1,7 +1,7 @@
 @extends('dashboard.layout')
 
 @section('content')
-    @include('dashboard.pesan')
+    {{-- @include('dashboard.pesan') --}}
     <form action="{{ route('skill.update') }}" method="POST">
       @csrf
         <div class="mb-3 pt-3">
