@@ -7,6 +7,7 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\PengaturanHalamanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SkillController;
 
@@ -50,5 +51,7 @@ Route::prefix('dashboard')->middleware('auth')->group(
         Route::post('skill', [SkillController::class, 'update'])->name('skill.update');
         Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
         Route::post('profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::get('pengaturan-halaman', [PengaturanHalamanController::class, 'index'])->name('pengaturan-halaman.index');
+        Route::post('pengaturan-halaman', [PengaturanHalamanController::class, 'update'])->name('pengaturan-halaman.update');
     }
 );
