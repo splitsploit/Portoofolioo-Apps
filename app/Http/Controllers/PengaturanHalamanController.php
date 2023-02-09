@@ -18,6 +18,10 @@ class PengaturanHalamanController extends Controller
     {
         MetaData::updateOrCreate(['meta_key' => '_halaman_about'], ['meta_value' => $request->_halaman_about]);
 
+        MetaData::updateOrCreate(['meta_key' => '_halaman_interest'], ['meta_value' => $request->_halaman_interest]);
+
+        MetaData::updateOrCreate(['meta_key' => '_halaman_award'], ['meta_value' => $request->_halaman_award]);
+
         return redirect()->route('pengaturan-halaman.index')->with('success', 'Berhasil Update Data Pengaturan Halaman');
     }
 }
