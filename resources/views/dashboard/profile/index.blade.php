@@ -6,6 +6,11 @@
       @csrf
       <div class="row justify-content-between">
         <div class="col-5">
+          
+          @if (get_meta_value('_foto'))
+            <img src="{{ asset('foto') . '/' . get_meta_value('_foto') }}" style="max-width: 100px;max-height=100px">
+          @endif
+
           <h3>Profile</h3>
           <div class="mb-3 pt-3">
             <label for="_foto" class="form-label">Foto</label>
@@ -25,7 +30,7 @@
           </div>
           <div class="mb-3 pt-3">
             <label for="_email" class="form-label">Email</label>
-            <input type="text" class="form-control form-control-sm" name="_email" id="_email">
+            <input type="text" class="form-control form-control-sm" name="_email" id="_email" value="{{ get_meta_value('_email') }}">
           </div>
         </div>
         <div class="col-5">

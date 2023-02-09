@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MetaData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProfileController extends Controller
 {
@@ -29,10 +30,14 @@ class ProfileController extends Controller
             $foto_baru = date('ymdhis') . ".$foto_ekstensi";
             $foto_file->move(public_path('foto'), $foto_baru);
 
+            // hapus foto lama, jika ada update foto baru
+            $foto_lama = get_meta_value('_foto');
+            File::delete(public_path('foto') . '/' . $foto_lama);
+
             MetaData::updateOrCreate(['meta_key' => '_foto'], ['meta_value' => $foto_baru]);
         }
 
-        MetaData::updateOrCreate(['meta_key' => '_email'], ['meta_value' => $request->email]);
+        MetaData::updateOrCreate(['meta_key' => '_email'], ['meta_value' => $request->_email]);
 
         return redirect()->route('profile.index')->with('success', 'Berhasil Update Data Profile');
 
