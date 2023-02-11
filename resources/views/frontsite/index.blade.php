@@ -47,10 +47,10 @@
                     </div>
                     <div class="lead mb-5">{!! $about->isi !!}</div>
                     <div class="social-icons">
-                        <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-github"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="social-icon" href="{{ get_meta_value('_linkedin') }}"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" href="{{ get_meta_value('_github') }}"><i class="fab fa-github"></i></a>
+                        <a class="social-icon" href="{{ get_meta_value('_twitter') }}"><i class="fab fa-twitter"></i></a>
+                        <a class="social-icon" href="{{ get_meta_value('_facebook') }}"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </section>
