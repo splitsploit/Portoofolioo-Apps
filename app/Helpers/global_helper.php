@@ -11,4 +11,11 @@ function get_meta_value($meta_key)
     }
 };
 
+function set_list_award($isi)
+{
+    $isi = str_replace("<ul>", '<ul class="fa-ul mb-0">', $isi);
+    $isi = str_replace("<li>", '<li><span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>', $isi);
+    return $isi;
+}
+
 ?>

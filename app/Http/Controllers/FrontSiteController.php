@@ -15,9 +15,13 @@ class FrontSiteController extends Controller
         $interest_id = get_meta_value('_halaman_interest');
         $interest_data = Halaman::where('id', $interest_id)->first();
 
+        $award_id = get_meta_value('_halaman_award');
+        $award_data = Halaman::where('id', $award_id)->first();
+
         return view('frontsite.index')->with([
             'about' => $about_data,
             'interest' => $interest_data,
+            'award' => $award_data,
         ]);
     }
 }
