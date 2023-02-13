@@ -3,7 +3,7 @@
 
 Website portofolio yang dibangun menggunakan Laravel. Terintegrasi juga dengan Admin Dashboard Untuk Memasukkan Data portofolio nya.
 
-Menggunakan Google OAuth sebagai Login ke Backend nya.
+Menggunakan Google OAuth untuk Login ke Backend nya.
 ## Features
 
 - Login By Google
