@@ -76,23 +76,17 @@
             <section class="resume-section" id="education">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Education</h2>
+                    @foreach ($education as $item)
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">University of Colorado Boulder</h3>
-                            <div class="subheading mb-3">Bachelor of Science</div>
-                            <div>Computer Science - Web Development Track</div>
-                            <p>GPA: 3.23</p>
+                            <h3 class="mb-0">{{ $item->judul }}</h3>
+                            <div class="subheading mb-3">{{ $item->info1 }}</div>
+                            <div>{{ $item->info2 }}</div>
+                            <p>GPA: {{ $item->info3 }}</p>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2006 - May 2010</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary">{{ $item->tgl_mulai_indo }} - {{ $item->tgl_akhir_indo }}</span></div>
                     </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">James Buchanan High School</h3>
-                            <div class="subheading mb-3">Technology Magnet Program</div>
-                            <p>GPA: 3.56</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
-                    </div>
+                    @endforeach
                 </div>
             </section>
             <hr class="m-0" />

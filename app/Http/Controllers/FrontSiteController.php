@@ -21,11 +21,14 @@ class FrontSiteController extends Controller
 
         $experience_data = Riwayat::where('tipe', 'experience')->get();
 
+        $education_data = Riwayat::where('tipe', 'education')->get();
+
         return view('frontsite.index')->with([
             'about' => $about_data,
             'interest' => $interest_data,
             'award' => $award_data,
             'experience' => $experience_data,
+            'education' => $education_data,
         ]);
     }
 }
