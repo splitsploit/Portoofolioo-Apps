@@ -18,4 +18,11 @@ function set_list_award($isi)
     return $isi;
 }
 
+function set_list_workflow($isi)
+{
+    $isi = str_replace("<ul>", '<ul class="fa-ul mb-0">', $isi);
+    $isi = str_replace("<li>", '<li><span class="fa-li"><i class="fas fa-check"></i></span>', $isi);
+    return $isi;
+}
+
 ?>
